@@ -1,0 +1,47 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: expense_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: expense_tracker
+      MYSQL_USER: expense_user
+      MYSQL_PASSWORD: expense_password
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "expense_user", "-pexpense_password"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - expense_network
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: expense_api
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - expense_network
+
+volumes:
+  db_data:
+    driver: local
+
+networks:
+  expense_network:
+    driver: bridge

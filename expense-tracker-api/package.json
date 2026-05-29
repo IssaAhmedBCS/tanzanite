@@ -1,0 +1,22 @@
+{
+  "name": "expense-tracker-api",
+  "version": "1.0.0",
+  "description": "A production-quality REST API for tracking expenses built with Node.js, Express, and MySQL",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": ["expense", "tracker", "api", "rest", "nodejs", "express", "mysql"],
+  "author": "Tanzanite Skills Academy",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.1.0",
+    "mysql2": "^3.9.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

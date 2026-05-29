@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"d:\\\\2026 PROJECT\\\\Tanzanite Skills Academy\\\\expense-tracker-api\\\\src\\\\routes\")",
+      "Bash(mkdir -p \"d:\\\\2026 PROJECT\\\\Tanzanite Skills Academy\\\\expense-tracker-api\\\\src\\\\controllers\")",
+      "Bash(mkdir -p \"d:\\\\2026 PROJECT\\\\Tanzanite Skills Academy\\\\expense-tracker-api\\\\src\\\\models\")",
+      "Bash(mkdir -p \"d:\\\\2026 PROJECT\\\\Tanzanite Skills Academy\\\\expense-tracker-api\\\\src\\\\middleware\")",
+      "Bash(mkdir -p \"d:\\\\2026 PROJECT\\\\Tanzanite Skills Academy\\\\expense-tracker-api\\\\src\\\\config\")"
+    ]
+  }
+}
